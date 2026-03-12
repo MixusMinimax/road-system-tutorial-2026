@@ -3,6 +3,7 @@ using UnityEngine;
 namespace Car.Scripts
 {
     [RequireComponent(typeof(ConfigurableJoint))]
+    [DefaultExecutionOrder(10)]
     public class CarSteeringJoint : MonoBehaviour
     {
         private ConfigurableJoint _joint;
@@ -19,7 +20,7 @@ namespace Car.Scripts
             _limit = _joint.angularYLimit.limit;
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             steer = Mathf.Clamp(steer, -1, 1);
             _joint.targetRotation = Quaternion.Euler(0, (invert ? -steer : steer) * _limit, 0);
