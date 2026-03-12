@@ -19,7 +19,6 @@ namespace Car.Scripts
             _limit = _joint.angularYLimit.limit;
         }
 
-        // Update is called once per frame
         private void Update()
         {
             steer = Mathf.Clamp(steer, -1, 1);

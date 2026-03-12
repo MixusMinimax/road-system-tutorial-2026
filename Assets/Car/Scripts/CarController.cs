@@ -22,7 +22,6 @@ namespace Car.Scripts
             _rigidbody.solverIterations = 15;
         }
 
-        // Update is called once per frame
         private void Update()
         {
             var steer = _steerAction.ReadValue<float>();
